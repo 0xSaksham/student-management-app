@@ -1,0 +1,9 @@
+<div class="widget-card">
+  <div class="widget-header">
+    <ng-content select="[header]"></ng-content>
+    <small>{{ statusMsg() }}</small>
+  </div>
+  <div class="widget-body">
+    <ng-content></ng-content>
+  </div>
+</div>

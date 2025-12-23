@@ -1,0 +1,17 @@
+<div class="card" [class.probation-border]="isProbation()">
+  <h3>{{ student().name }}</h3>
+
+  @switch (student().status) {
+  @case ('Active') {<span class="badge active">Active</span>}
+  @case ('Probation') {<span class="badge probation">Probation</span>}
+  @case ('Graduated') {<span class="badge graduated">Alumni</span>}
+  }
+
+  <div class="info">
+    <p>Major: {{student().major}}</p>
+    <p [style.color]="gpaColor()">GPA: {{student().gpa}}</p>
+    <p>Attendance: {{student().attendance}}%</p>
+  </div>
+
+  <button (click)="onRemove.emit(student().id)">Delete</button>
+</div>

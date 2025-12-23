@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Student Dashboard</h1>
+  <app-widget>
+    <h2 header #cardTitle>Class Statistics</h2> <!-- #cardTitle used by ContentChild -->
+    <div class="stats">
+      <p>Count: <strong>{{totatStudents()}}</strong></p>
+      <p>Avg GPA: <strong>{{ averageGpa() }}</strong></p>
+    </div>
+  </app-widget>
+
+  <div class="controls">
+    <input #nameInput type="text" placeholder="Student Name" [(ngModel)]="newName">
+    <button (click)="addStudent()">Add Student</button>
+  </div>
+
+  <!-- List Area -->
+  <div class="grid">
+    <!-- New Control Flow: @for -->
+    @for (s of students(); track s.id) {
+    <app-student-card [student]="s" (onRemove)="removeStudent($event)"></app-student-card>
+    } @empty {
+    <p>No students available.</p>
+    }
+  </div>
+
+  <p class="log-text">Open console to see Lifecycle logs</p>
+</div>

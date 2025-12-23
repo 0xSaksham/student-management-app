@@ -1,0 +1,40 @@
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  background: white;
+}
+
+.probation-border {
+  border-left: 5px solid red;
+  background: #fff5f5;
+}
+
+.badge {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  color: white;
+}
+
+.active {
+  background: green;
+}
+
+.probation {
+  background: red;
+}
+
+.graduated {
+  background: blue;
+}
+
+button {
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}

@@ -1,0 +1,30 @@
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.controls {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  font-size: 1.1rem;
+}
+
+.log-text {
+  margin-top: 30px;
+  font-style: italic;
+  color: #666;
+}
