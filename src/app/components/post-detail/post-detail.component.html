@@ -1,0 +1,19 @@
+<div style="padding: 20px;">
+  <a routerLink="/posts">← Back to Posts</a>
+
+  @if (post()) {
+  <div style="background: #f9f9f9; padding: 20px; margin-top: 15px; border-radius: 8px;">
+    <h1>{{ post().title }}</h1>
+    <p>{{ post().body }}</p>
+    <small>Viewed timestamp: {{ timestamp() }}</small>
+  </div>
+
+  <h3>Comments</h3>
+  @for (c of comments(); track c.id) {
+  <div style="border-left: 3px solid #007bff; padding: 10px; margin-bottom: 10px; background: white;">
+    <strong>{{ c.email }}</strong>: {{ c.body }}
+  </div>
+  } } @else {
+  <p>Loading post data...</p>
+  }
+</div>

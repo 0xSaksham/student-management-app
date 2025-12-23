@@ -1,5 +1,8 @@
 <div class="container">
-  <h1>Student Dashboard</h1>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h1>Student Dashboard</h1>
+    <button (click)="goToPosts()" style="background: #444; color: white;">View API Posts →</button>
+  </div>
   <app-widget>
     <h2 header #cardTitle>Class Statistics</h2> <!-- #cardTitle used by ContentChild -->
     <div class="stats">

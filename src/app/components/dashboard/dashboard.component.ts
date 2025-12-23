@@ -8,12 +8,14 @@ import {
   OnInit,
   AfterViewInit,
   OnDestroy,
+  inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // Required for ngModel
 import { Student } from '../../models/student.model';
 import { StudentCardComponent } from '../student-card/student-card.component';
 import { WidgetComponent } from '../widget/widget.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -23,6 +25,8 @@ import { WidgetComponent } from '../widget/widget.component';
   standalone: true,
 })
 export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
+  private router = inject(Router);
+
   @ViewChild('nameInput') nameInputRef!: ElementRef;
 
   students = signal<Student[]>([
@@ -88,5 +92,9 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
         attendance: Math.min(100, Math.max(0, s.attendance + (Math.random() > 0.5 ? 5 : -5))),
       }))
     );
+  }
+
+  goToPosts() {
+    this.router.navigate(['/posts']);
   }
 }

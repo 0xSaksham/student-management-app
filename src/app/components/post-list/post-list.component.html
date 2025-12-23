@@ -1,0 +1,12 @@
+<div style="padding: 20px;">
+  <h2>Blog Posts (API Data)</h2>
+  <div style="display: grid; gap: 10px;">
+    @for (post of posts(); track post.id) {
+    <div (click)="goToDetail(post.id)"
+      style="border: 1px solid #ddd; padding: 10px; cursor: pointer; border-radius: 5px; background: #fff;">
+      <strong>{{ post.title }}</strong>
+      <p style="color: #666; font-size: 0.9rem;">Click to view details & comments</p>
+    </div>
+    }
+  </div>
+</div>
